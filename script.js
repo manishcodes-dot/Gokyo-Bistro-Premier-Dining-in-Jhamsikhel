@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if(homeGrid) {
         menuData.slice(2, 6).forEach(item => {
             homeGrid.innerHTML += `
-                <div class="card p-0 overflow-hidden">
-                    <img src="${item.img}" style="width:100%; height:140px; object-fit:cover;">
+                <div class="card p-0">
+                    <img src="${item.img}" style="width:100%; height:180px; object-fit:cover;">
                     <div class="p-1">
-                        <h4>${item.name}</h4>
-                        <p class="text-primary font-bold">Rs.${item.price}</p>
+                        <h4 class="mb-1">${item.name}</h4>
+                        <p class="text-primary" style="font-weight:700">Rs.${item.price}</p>
                     </div>
                 </div>
             `;
@@ -147,15 +147,15 @@ function renderMenu() {
     });
     
     const html = filtered.map(item => `
-        <div class="card p-0 overflow-hidden">
+        <div class="card p-0">
             <img src="${item.img}" style="width:100%; height:200px; object-fit:cover;">
             <div class="p-1 flex flex-col" style="height:100%">
-                <span style="font-size:0.8rem; color:#888">${item.cat}</span>
-                <h3 style="margin-bottom: 0.2rem">${item.name}</h3>
-                <p style="font-size:0.9rem; flex-grow:1; margin-bottom:1rem">${item.desc}</p>
+                <span class="text-muted" style="font-size:0.75rem; text-transform: uppercase; letter-spacing: 1px;">${item.cat}</span>
+                <h3 style="font-size: 1.25rem; margin-top: 0.25rem;">${item.name}</h3>
+                <p class="text-muted" style="font-size:0.9rem; flex-grow:1; margin-bottom:1.5rem">${item.desc}</p>
                 <div class="flex justify-between items-center mt-auto">
-                    <span class="text-primary font-bold" style="font-size:1.1rem">Rs.${item.price}</span>
-                    <button class="btn btn-outline" style="padding: 0.4rem 0.8rem;" onclick="addToCart(${item.id})">Add</button>
+                    <span class="text-primary" style="font-size:1.25rem; font-weight: 700;">Rs.${item.price}</span>
+                    <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;" onclick="addToCart(${item.id})">Add to Cart</button>
                 </div>
             </div>
         </div>
